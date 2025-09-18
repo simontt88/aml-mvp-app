@@ -36,7 +36,7 @@ export const authApi = {
 export const hitsApi = {
   // v1 hits (kept briefly for Dashboard until fully moved to v2 SourceCase)
   getHits: (params?: { skip?: number; limit?: number; profile_unique_id?: string }): Promise<HitListItem[]> =>
-    api.get('/api/hits', { params }).then(res => res.data),
+    api.get('/hits', { params }).then(res => res.data),
 };
 
 // v2 cases endpoints
