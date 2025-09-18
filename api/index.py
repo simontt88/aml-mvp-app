@@ -14,8 +14,13 @@ if str(BACKEND_DIR) not in sys.path:
 
 
 # Expose FastAPI app for Vercel's Python ASGI runtime
-from app.main import app  # noqa: E402
+from fastapi import FastAPI  # noqa: E402
+from app.main import app as backend_app  # noqa: E402
 
+# Mount the backend app under /api so routes match when accessed via /api/* on Vercel
+vercel_app = FastAPI()
+vercel_app.mount("/api", backend_app)
+app = vercel_app
 
 # Optional: allow overriding CORS for previews via env
 default_cors = os.getenv("CORS_ALLOW_ORIGINS")
