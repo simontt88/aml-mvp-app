@@ -1,22 +1,8 @@
 {
-  "builds": [
-    { "src": "api/index.py", "use": "@vercel/python" },
-    { 
-      "src": "frontend/package.json", 
-      "use": "@vercel/static-build", 
-      "config": { 
-        "distDir": "dist"
-      } 
-    }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "api/index.py" }
-  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "env": {
-    "CORS_ALLOW_ORIGINS": "*"
-  }
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
-

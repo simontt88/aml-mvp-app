@@ -1,0 +1,11 @@
+{
+  "name": "aml-screening-system",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "cd frontend && npm run dev"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
