@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+.venv
+.env
+build
+.cache
+*.log
+**/__pycache__
+
+scripts/aml_screening.db
+explore/
